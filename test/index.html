@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Mudei para francês já que o texto está em francês -->
+<head>
+    <!-- TikTok Pixel Code (Organizado em seção separada) -->
+    <script>
+    !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+        ttq.load('D23FSQRC77UE01TJPLN0');
+        ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- Fim do TikTok Pixel Code -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirmação de idade para acesso ao conteúdo"> <!-- Adicionei meta description -->
+    <title>Confirmation d'Âge</title> <!-- Título em francês -->
+    
+    <style>
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            padding: 20px;
+        }
+
+        /* Container principal */
+        .confirmation-container {
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 0.5s ease-in-out; /* Adicionei animação */
+        }
+
+        /* Títulos e textos */
+        .confirmation-title {
+            color: #cc0000;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .confirmation-text {
+            color: #000;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        /* Botão principal */
+        .watch-button, #midas-cta-button {
+            background-color: #e65c00;
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+
+        .watch-button:hover, #midas-cta-button:hover {
+            background-color: #cc5200;
+            transform: translateY(-2px); /* Efeito de levitação */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+        }
+
+        /* Container do CTA (simplificado, já que o botão tem estilos unificados) */
+        .midas-cta-container {
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Animação de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    
+    <!-- Scripts no final do head para melhor performance -->
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async defer></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Função renomeada para melhor semântica
+            function collectUrlParameters(url) {
+                const urlObj = new URL(url);
+                let paramString = "";
+
+                urlObj.searchParams.forEach((value, key) => {
+                    paramString += `${paramString ? '&' : ''}${key}=${value}`;
+                });
+
+                return paramString;
+            }
+
+            // Processamento dos parâmetros
+            const urlParams = collectUrlParameters(window.location.href);
+
+            if (urlParams) {
+                document.querySelectorAll("a").forEach(link => {
+                    const separator = link.href.includes("?") ? "&" : "?";
+                    link.href += `${separator}${urlParams}`;
+                });
+            }
+            
+            // Adicionei um listener para o botão para tracking (opcional)
+            document.getElementById('midas-cta-button').addEventListener('click', function() {
+                if (typeof ttq !== 'undefined') {
+                    ttq.track('ClickButton', {});
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="confirmation-container">
+        <h1 class="confirmation-title">Nous avons besoin de votre confirmation :</h1>
+        <p class="confirmation-text">Cliquez sur Voir Maintenant si vous avez plus de 35 ans !</p>
+        
+        <div class="midas-cta-container"> 
+            <a href="https://ab.feudelhomme.online/pv" id="midas-cta-button" class="watch-button">
+                VOIR MAINTENANT
+            </a>
+        </div>
+    </div>
+</body>
+</html>
